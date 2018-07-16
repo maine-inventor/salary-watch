@@ -1,0 +1,82 @@
+<style type="text/css">#container {width: 200px; height: 800px; position: relative;}
+#penny { position: absolute;}
+#nickel { position: absolute;}
+#dime { position: absolute;}
+#quarter { position: absolute;}
+#dollar { position: absolute;}
+img{border:10px !important;}
+</style>
+<div id="container">
+<p>Earned: <input id="earned" type="number" value="0" /></p>
+
+<p>Enter Salery: <input id="salary" type="number" value="50000" /></p>
+
+<div id="dollar"><img src="http://jonathansantos.com/sites/default/files/2018-07/dollar.png" /></div>
+
+<div id="quarter"><img src="http://jonathansantos.com/sites/default/files/2018-07/quarter.png" /></div>
+
+<div id="dime"><img src="http://jonathansantos.com/sites/default/files/2018-07/dime.png" /></div>
+
+<div id="nickel"><img src="http://jonathansantos.com/sites/default/files/2018-07/nickel.png" /></div>
+
+<div id="penny"><img src="http://jonathansantos.com/sites/default/files/2018-07/penny.png" /></div>
+</div>
+<script>
+function myMove() {
+  var elem = document.getElementById("penny"); 
+var total = 0;
+  var pos = 0;
+  var posn = 0;
+var posd = 0;
+var posq = 0;
+var posb = 0;
+  var id = setInterval(frame, 14);
+  function frame() {
+    if (pos >= 600) {
+      pos = 0;
+total++;
+    } else {
+      pos = pos + 5; 
+      document.getElementById("penny").style.top = pos + 'px'; 
+    }
+    if (posn >= 600) {
+      posn = 0;
+    } else {
+      posn = posn + 1; 
+      document.getElementById("nickel").style.top = posn + 'px'; 
+    }
+    if (posd >= 600) {
+      posd = 0;
+    } else {
+      posd = posd + .5; 
+      document.getElementById("dime").style.top = posd + 'px'; 
+    }
+    if (posq >= 600) {
+      posq = 0;
+    } else {
+      posq = posq + .2; 
+      document.getElementById("quarter").style.top = posq + 'px'; 
+    }
+    if (posb >= 600) {
+      posb = -50;
+    } else {
+      posb = posb + .05; 
+      document.getElementById("dollar").style.top = posb + 'px'; 
+    }
+  }
+}
+myMove();
+</script>
+
+<p>$ 100,000 Per Year ==================================<br />
+Salary in Real-time: 50,000.00 per year<br />
+---- a penny every 1.4976 seconds ----<br />
+<br />
+$     0.00667735042735 per sec<br />
+$     0.40064102564102 per minute<br />
+$    24.03846153846154 per hour<br />
+$   192.30769230769232 per day<br />
+$   961.53846153846152 per week<br />
+$ 3,846.15384615384654 per month<br />
+=====================================<br />
+
